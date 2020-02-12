@@ -13,7 +13,7 @@ android {
         minSdkVersion safeExtGet('minSdkVersion', 18)
         //noinspection OldTargetApi
         targetSdkVersion safeExtGet('targetSdkVersion', 27)
-        targetSdkVersion 21
+        targetSdkVersion 27
         versionCode 7
         versionName "0.0.1"
     }
