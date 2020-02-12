@@ -5,15 +5,15 @@ def safeExtGet(prop, fallback) {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion safeExtGet('compileSdkVersion', 27)
+    compileSdkVersion safeExtGet('compileSdkVersion', 24)
     //noinspection GradleDependency
     buildToolsVersion safeExtGet('buildToolsVersion', '27.0.3')
 
     defaultConfig {
-        minSdkVersion safeExtGet('minSdkVersion', 18)
+        minSdkVersion safeExtGet('minSdkVersion', 24)
         //noinspection OldTargetApi
-        targetSdkVersion safeExtGet('targetSdkVersion', 27)
-        targetSdkVersion 27
+        targetSdkVersion safeExtGet('targetSdkVersion', 24)
+        targetSdkVersion 24
         versionCode 7
         versionName "0.0.1"
     }
