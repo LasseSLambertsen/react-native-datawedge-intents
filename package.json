@@ -21,10 +21,9 @@
     "tc70",
     "data-capture"
   ],
-  "author": "Darryn Campbell",
+  "author": "Boris Lašič",
   "license": "MIT",
-  "repository": "https://github.com/darryncampbell/react-native-datawedge-intents",
-  "bugs": "https://github.com/darryncampbell/react-native-datawedge-intents/issues",
+  "repository": "https://github.com/blasic/react-native-datawedge-intents",
   "peerDependencies": {
     "react-native": ">=0.56"
   }
