@@ -57,8 +57,6 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
     {
         //  THIS METHOD IS DEPRECATED, use registerBroadcastReceiver
         Log.d(TAG, "Registering an Intent filter for action: " + action);
-        this.registeredAction = action;
-        this.registeredCategory = category;
         //  User has specified the intent action and category that DataWedge will be reporting
         try
         {
