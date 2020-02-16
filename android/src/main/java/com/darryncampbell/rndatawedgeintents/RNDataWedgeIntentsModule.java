@@ -62,7 +62,7 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
         //  User has specified the intent action and category that DataWedge will be reporting
         try
         {
-            this.reactContext.unregisterReceiver(scannedDataBroadcastReceiver);
+            this.reactContext.unregisterReceiver(genericReceiver);
         }
         catch (IllegalArgumentException e)
         {
