@@ -53,32 +53,26 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
 
 
     @ReactMethod
-    public void registerBroadcastReceiver(ReadableMap filterObj) {
-        try {
-            this.reactContext.unregisterReceiver(genericReceiver);
-        } catch (IllegalArgumentException e) {
+    public void registerReceiver(String action, String category)
+    {
+        //  THIS METHOD IS DEPRECATED, use registerBroadcastReceiver
+        Log.d(TAG, "Registering an Intent filter for action: " + action);
+        this.registeredAction = action;
+        this.registeredCategory = category;
+        //  User has specified the intent action and category that DataWedge will be reporting
+        try
+        {
+            this.reactContext.unregisterReceiver(scannedDataBroadcastReceiver);
+        }
+        catch (IllegalArgumentException e)
+        {
             //  Expected behaviour if there was not a previously registered receiver.
         }
         IntentFilter filter = new IntentFilter();
-        if (filterObj.hasKey("filterActions")) {
-            ReadableType type = filterObj.getType("filterActions");
-            if (type == ReadableType.Array) {
-                ReadableArray actionsArray = filterObj.getArray("filterActions");
-                for (int i = 0; i < actionsArray.size(); i++) {
-                    filter.addAction(actionsArray.getString(i));
-                }
-            }
-        }
-        if (filterObj.hasKey("filterCategories")) {
-            ReadableType type = filterObj.getType("filterCategories");
-            if (type == ReadableType.Array) {
-                ReadableArray categoriesArray = filterObj.getArray("filterCategories");
-                for (int i = 0; i < categoriesArray.size(); i++) {
-                    filter.addCategory(categoriesArray.getString(i));
-                }
-            }
-        }
-        this.reactContext.registerReceiver(genericReceiver, filter);
+        filter.addAction(action);
+        if (category != null && category.length() > 0)
+            filter.addCategory(category);
+        this.reactContext.registerReceiver(scannedDataBroadcastReceiver, filter);
     }
 
 

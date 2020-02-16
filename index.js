@@ -9,8 +9,8 @@ var RNDataWedgeIntents = NativeModules.DataWedgeIntents;
 
 var DataWedgeIntents = {
     //  Specifying the DataWedge API constants in this module is deprecated.  It is not feasible to stay current with the DW API.
-    registerBroadcastReceiver(filter) {
-        RNDataWedgeIntents.registerBroadcastReceiver(filter);
+    registerReceiver(action, category ) {
+        RNDataWedgeIntents.registerReceiver(action,category);
     },
 };
 
