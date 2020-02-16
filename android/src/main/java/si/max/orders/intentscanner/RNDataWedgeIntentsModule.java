@@ -1,4 +1,4 @@
-package com.darryncampbell.rndatawedgeintents;
+package si.max.orders.intentscanner;
 
 import android.content.Intent;
 import android.util.Log;

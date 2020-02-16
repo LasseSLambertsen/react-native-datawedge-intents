@@ -1,4 +1,4 @@
-package com.darryncampbell.rndatawedgeintents;
+package si.max.orders.intentscanner;
 
 import java.util.Observable;
 import java.util.Observer;
