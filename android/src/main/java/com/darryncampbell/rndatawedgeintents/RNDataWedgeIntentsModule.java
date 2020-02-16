@@ -72,7 +72,7 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
         filter.addAction(action);
         if (category != null && category.length() > 0)
             filter.addCategory(category);
-        this.reactContext.registerReceiver(scannedDataBroadcastReceiver, filter);
+        this.reactContext.registerReceiver(genericReceiver, filter);
     }
 
 
